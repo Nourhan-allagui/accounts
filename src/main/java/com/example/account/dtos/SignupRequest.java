@@ -16,13 +16,6 @@ public class SignupRequest {
     private String lastName;
     private String phoneNumber;
     private String profileImageUrl;
-
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "nour_user_role",
-            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "role_name", referencedColumnName = "name")}
-    )
     private Set<Roles> roles = new HashSet<>();
 
     public String getUsername() {
